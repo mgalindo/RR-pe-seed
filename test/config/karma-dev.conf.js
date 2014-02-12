@@ -6,8 +6,6 @@ config.set({
 
     // list of files / patterns to load in the browser
     files: [
-      MOCHA,
-      MOCHA_ADAPTER,
       'node_modules/chai/chai.js',
       'node_modules/chai-as-promised/lib/chai-as-promised.js',
       'node_modules/sinon/lib/sinon.js',
@@ -28,16 +26,16 @@ config.set({
       'node_modules/projevo-core/content/shared/public/js/lib/angular/angular-route.js',
       'node_modules/projevo-core/content/shared/public/js/lib/module.js',
       'node_modules/projevo-core/content/shared/public/js/services/**/*.js',
-      'node_modules/projevo-core/content/shared/public/js/controllers/*.js',
-      'node_modules/projevo-core/content/shared/public/js/directives/*.js',
+      //'node_modules/projevo-core/content/shared/public/js/controllers/*.js',
+      //'node_modules/projevo-core/content/shared/public/js/directives/*.js',
         //tjb added for styling
-      'content/shared/public/js/lib/ui-bootstrap/*.js',
-      'content/shared/public/js/**/*.js',
+      //'content/shared/public/js/lib/ui-bootstrap/*.js',
+      //'content/shared/public/js/**/*.js',
       'content/mobile/public/js/**/*.js',
       'content/web/public/js/**/*.js',
-      'test/unit/client/**/*.js'
+      'test/unit/client/listControllerSpec.js'
     ],
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'mocha'],
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit'
     reporters: ['progress'],
@@ -53,7 +51,7 @@ config.set({
 
     // level of logging
     // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-    logLevel: LOG_INFO,
+    logLevel: config.LOG_INFO,
 
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
@@ -77,12 +75,15 @@ config.set({
     
     plugins : [
             'karma-chrome-launcher',
-            'karma-jasmine'
-            ],
+            'karma-jasmine',
+            'karma-mocha'
+        ],
 
-    /*
-    junitReporter: {
-      outputFile: 'test/out/unit_client.xml',
-      suite: 'unit_client'
-    };*/    
-})};
+
+        junitReporter: {
+            outputFile: 'test/out/unit_client.xml',
+            suite: 'unit_client'
+        }
+
+    })};
+

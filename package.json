@@ -7,7 +7,7 @@
     "test": "mocha test/unit/server --globals NODE_CONFIG,exportscoffeeScript"
   },
   "dependencies": {
-    "projevo-core": "git+ssh://git@github.com:CommandAlkon/ProjectEvo-Core.git#develop",
+
     "express": "3.1.0",
     "jade": "=0.33.0",
     "mongodb": "=1.2.13",
@@ -21,15 +21,20 @@
     "express-expose": "~0.3.3"   
   },
   "devDependencies": {
-    "protractor": "*",
-	"jasmine-reporters": "~0.2.1",
-    "karma": "*",
-    "mocha": "=1.10.0",
-    "chai": "=1.5.0",
-    "sinon": "=1.6.0",
-    "sinon-chai": "=2.3.1",
-    "chai-as-promised": "=3.2.5",
-    "supertest": "=0.5.1",
-    "sandboxed-module": "=0.2.0"
+      "mocha": "=1.8.1",
+      "chai": "=1.5.0",
+      "sinon": "=1.6.0",
+      "sinon-chai": "=2.3.1",
+      "chai-as-promised": "=3.2.5",
+      "supertest": "=0.5.1",
+      "sandboxed-module": "=0.2.0",
+      "karma": "=0.10.2",
+      "karma-mocha": "=0.1.0",
+      "karma-chai": "=0.0.1",
+      "karma-junit-reporter": "*",
+      "istanbul": "=0.1.45",
+      "phantomjs": "=1.9.2-2",
+      "protractor": "~0.10.0",
+      "jasmine-reporters": "~0.2.1"
   }
 }
