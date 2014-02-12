@@ -1,0 +1,18 @@
+script#edit(type='text/ng-template')
+    div(id="editContact")
+        h1 {{ pageName || 'Edit contact' }}
+        form(role="form")
+            div(class="form-group")
+                label(for="contactName") Name
+                    input(ng-readonly="view", id="contactName", class="form-control", ng-model="contact.name", name="name")
+            
+            div(class="form-group")
+                label(for="contactAddress") Address
+                    input(ng-readonly="view", id="contactAddress", class="form-control", ng-model="contact.address", name="address")
+                    
+            div(class="form-group")
+                label(for="contactNumber") Number
+                    input(ng-readonly="view", id="contactNumber", class="form-control", ng-model="contact.number", name="number")
+                    
+            button(class="btn btn-default", ng-click="cancel()") Cancel
+            button(class="btn btn-default", ng-click="save()") Save

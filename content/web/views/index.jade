@@ -1,0 +1,17 @@
+extends layout
+
+block body
+    
+    script(src='/web/js/app.js')
+    script(src='/web/js/controllers/contact.js')
+    script(src='/web/js/controllers/listController.js')
+    script(src='/web/js/controllers/editController.js')
+    script(src='/web/js/services/services.js')
+    script(src='/web/js/services/localStorage.js')
+    script(src='/web/js/services/remoteStorage.js')	
+
+    h1 Contact Application
+    div(ng-view)
+      
+    include partials/list.jade
+    include partials/edit.jade

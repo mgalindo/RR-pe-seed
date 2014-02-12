@@ -1,0 +1,20 @@
+script#list(type='text/ng-template')
+    #contactList
+        h1 Contact List
+        p
+            a.btn.btn-default(ng-href='/add') Add contact
+        ul.container(style='list-style: none;')
+            h2.text-info(ng-hide='contacts.length') No contacts yet
+            input(type="text", ng-model="searchbar", placeholder="Search")
+            br
+            span.col-md-4 Name 
+            span.col-md-4 Address 
+            span.col-md-4 Number 
+            .clearfix
+            li.container(ng-repeat='contact in contacts | filter:searchbar', style='padding: 0; margin: 0; border-bottom: 1px solid black;')
+                .col-md-4.alert.alert-success(style='font-size: 30px;') {{ contact.name }}
+                .col-md-4.alert.alert-info(style='font-size: 30px;') {{ contact.address }}
+                .col-md-4.alert.alert-warning(style='font-size: 30px;') {{ contact.number }}
+                a.btn.btn-default(ng-href='/contact/{{contact.identity}}') View
+                a.btn.btn-default(ng-href='/edit/{{contact.identity}}') Edit
+                button.btn.btn-info(ng-click='delete(contact)') Delete
