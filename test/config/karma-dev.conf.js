@@ -33,6 +33,7 @@ config.set({
       //'content/shared/public/js/**/*.js',
       'content/mobile/public/js/**/*.js',
       'content/web/public/js/**/*.js',
+      'test/mocks/mockServices.js',
       'test/unit/client/listControllerSpec.js'
     ],
     frameworks: ['jasmine', 'mocha'],

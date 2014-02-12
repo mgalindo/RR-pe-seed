@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-angular.module('contactApp', ['contactApp.controllers', 'ngCookies', 'ngRoute']).
+angular.module('contactApp', ['cai.services', 'contactApp.controllers', 'contactApp.services', 'ngCookies', 'ngRoute']).
   config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
    $locationProvider.html5Mode(true);
    $routeProvider.when('/', {
